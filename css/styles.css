@@ -9,6 +9,16 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /*isso garante que o padding e a borda nao aumentem o tamanho total dos elementos*/
+}
+
+html, body {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column; /*faz com que o body se comporte como um container flexivel vertical*/
 }
 
 header {
@@ -28,6 +38,8 @@ header {
 }
 
 .div__boxs {
+    flex: 1; /*faz com que o div__boxs ocupe o espaço restante disponível entre o header e o footer*/
+    margin-top: 4.5em;
     display: flex;
     flex-direction: row; 
     align-items: center;
@@ -35,6 +47,7 @@ header {
 }
 
 .div__box {
+    text-align: center;
     border: 4px solid rgb(18, 21, 141) ;
     display: flex; 
     align-items: center; /*alinhando a img dentro da div*/
@@ -42,17 +55,22 @@ header {
     flex-direction: column;
     width: 20vw;
     height: 20vw;
-    margin-top: 3em;
+    margin-bottom: 8em;
     border-radius: 10px;
     padding: 30px;
 }
 
 h2 {
+    display: block;
      font-family: 'Cooper Black', Arial, Helvetica, sans-serif;
      -webkit-text-stroke: 2px rgba(0, 51, 255, 0.673);
      color: rgb(183, 255, 0);
      font-size: 1.7em;
     
+}
+
+a {
+    text-decoration: none;
 }
 
 
@@ -61,4 +79,36 @@ h2 {
     overflow: clip;
 }
 
+.img__chris {
+    margin-top: 1.4em;
+}
 
+.img__livro {
+    margin-bottom: 1em;
+}
+
+
+.img__int {
+    margin-bottom: 3em;
+}
+
+footer {
+    
+    padding: 0.25rem;
+    background: rgb(18, 21, 141);
+    text-align: center;
+    font-size: 1em;
+    color: white;
+
+}
+
+footer > p > a {
+    font-family: 'Cooper Black';
+    -webkit-text-stroke: 1px rgba(0, 51, 255, 0.673);
+     color: rgb(183, 255, 0);
+    
+}
+
+footer > p > a:hover {
+    color: yellow;
+}
