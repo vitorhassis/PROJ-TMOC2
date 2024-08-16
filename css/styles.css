@@ -50,22 +50,23 @@ header {
     text-align: center;
     border: 4px solid rgb(18, 21, 141) ;
     display: flex; 
-    align-items: center; /*alinhando a img dentro da div*/
+    align-items: center; /*alinhando a img dentro da div horizontalmente*/
     justify-content: space-between;
     flex-direction: column;
-    width: 20vw;
-    height: 20vw;
+    width: 30vw;
+    height: 30vw;
     margin-bottom: 8em;
     border-radius: 10px;
     padding: 30px;
 }
 
 h2 {
+    margin-top: 1em;
     display: block;
      font-family: 'Cooper Black', Arial, Helvetica, sans-serif;
      -webkit-text-stroke: 2px rgba(0, 51, 255, 0.673);
      color: rgb(183, 255, 0);
-     font-size: 1.7em;
+     font-size: 1.9em;
     
 }
 
@@ -80,16 +81,16 @@ a {
 }
 
 .img__chris {
-    margin-top: 1.4em;
+    margin-bottom: 4em;
 }
 
 .img__livro {
-    margin-bottom: 1em;
+    margin-bottom: 7em;
 }
 
 
 .img__int {
-    margin-bottom: 3em;
+    margin-bottom: 8em;
 }
 
 footer {
@@ -112,3 +113,73 @@ footer > p > a {
 footer > p > a:hover {
     color: yellow;
 }
+
+
+/*dava pra melhorar bem essa parte aq pra baixo, mas estou aprendendo com o tempo*/
+
+@media only screen and (min-width: 871px) and (max-width: 1669px) {
+    .div__box {
+        height: 50vh;
+    }
+
+    .div__box img {
+        margin-top: 40px;
+    }
+
+    .div__box h2 {
+        font-size: 1.6em;
+    }
+
+}
+
+
+@media (max-width: 870px) {
+
+    .div__boxs {
+        flex-direction: column;
+    }
+
+    .div__box {
+        width: 85vw;
+        height: 18vh;
+    }
+
+    .div__box  h2 {
+        font-size: 25px;
+        margin-bottom:40em;
+    }
+
+    .div__box img {
+        display: none;
+    }
+}
+
+
+@media (max-width: 581px) {
+    
+    .div__box {
+        height: 19vh;
+    }
+
+    .resp_2 {
+        margin-top:1.7em;
+    }
+
+}
+
+@media (max-width: 368px) {
+
+    .resp_1 {
+       margin: 0; 
+    }
+}
+
+@media (max-width: 280px) {
+    .div__box h2 {
+        font-size: 1.3em;
+        -webkit-text-stroke: 1px rgba(0, 51, 255, 0.673);
+        color: rgb(183, 255, 0);
+
+    }
+}
+
