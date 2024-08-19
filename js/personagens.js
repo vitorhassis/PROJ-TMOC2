@@ -1,14 +1,14 @@
-fetch("https://everybody-hates-chris.onrender.com/api/v1/series/evhc/")
-.then(result => result.json())
-.then(json=>consumirLista(json));
+const url = "https://everybody-hates-chris.p.rapidapi.com/"
 
+async function getAllPosts() {
 
-function consumirLista(json) {
-    var lista = document.createElementById("lista");
+    const response = await fetch(url)
 
-    json.forEach(objeto => {
-        var div = document.createElement("div");
-        div.classList.add("item");
-        
-    })
+    console.log(response);
+
+    const data = await response.json();
+
+    console.log(data)
 }
+
+getAllPosts()

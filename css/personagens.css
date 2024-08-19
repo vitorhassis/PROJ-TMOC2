@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Cooper Black';
+    src: url(CooperFiveOpti-Black.otf) format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(18, 21, 141);
+    display: flex;
+    align-items: center;
+    padding: 35px;
+     font-family: 'Cooper Black', Arial, Helvetica, sans-serif;
+     -webkit-text-stroke: px rgb(0, 51, 255);
+     color: rgb(215, 255, 35);
+}
+
+.titulo {
+    display: block;
+    margin: auto;
+}
+
+span {
+    width: 70px;
+}
+
+.div-lista {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#icon {
+    margin-left: 3em;
+    
+}
+
+.linha {
+    width: 100%;
+    height: 0.3vh;
+    background-color: rgba(159, 245, 0, 0.925) ;
+}
