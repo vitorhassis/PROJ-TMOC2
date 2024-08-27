@@ -1,0 +1,60 @@
+ENTENDENDO O CODIGO
+QUIZ.JS
+-Primeiramente, fizemos a seleção dos elementos do DOM, armazenando em variáveis para que possam ser manipuladas mais 
+tarde, onde cada variável corresponde a um elemento específico na página HTML;
+
+import questions from "./questions.js"
+-importa um array chamado questions de um modulo externo, no caso, esse array
+é referente as perguntas e respostas que montei;
+
+
+let currentIndex = 0;
+let questionsCorrect = 0;
+-estamos inicializando as variaveis, a primeira armazena o indica da pergunta atual no array questions;
+-a segunda linha, é responsavel pelo contador de respostas corretas do usuario;
+
+
+btnRestart.onclick = () => {
+  content.style.display = "flex";
+  contentFinish.style.display = "none";
+
+  currentIndex = 0;
+  questionsCorrect = 0;
+  loadQuestion();
+};
+-função acionada quando o botao de reinicio é clicado, tornando visível o container `content` (="flex");
+-currentIndex= 0 e questionsCorrect= 0 tem como objetivo REINICIALIZAR o índice da pergunta e o contador de respostas;
+currentIndex= É uma variável que mantém o índice da pergunta atual dentro do array questions. Ela começa em 0 e é 
+incrementada conforme o usuário avança pelas perguntas;
+-chama a função loadQuestion que vamos entender melhor a sua proposta logo abaixo;
+
+
+function nextQuestion(e) {
+  if (e.target.getAttribute("data-correct") === "true") {
+    questionsCorrect++;			(1)
+  }
+
+  if (currentIndex < questions.length - 1) {
+    currentIndex++;
+    loadQuestion();
+  } else {						(2)
+    finish();
+  }
+}
+-Primeiramente, essa funcao tem como objetivo ser chamada quando uma resposta for clicada, ou seja, envolver toda ação
+de passar para a proxima pergunta, somar ao questionsCorrect (somador de questoes corretas) ou nao, etc;
+-o parametro (e) refere-se ao OBJETO DE EVENTO que é passado automaticamente para a função quando um evento é disparado.
+O objeto do evento, `e` ou `event` é um parametro como dito, que tras INFORMAÇÕES sobre o evento que ocorreu, nesse caso
+informações sobre o elemento clicado. continua: (1)
+-usamos o if para fazer uma verificação condicional. Como dito no topico a cima, o parametro (e) nos tras informações
+muito importantes. Por exemplo, estamos fazendo uma verificação condicional, onde, SE o alvo do evento (e.target) tiver
+como valor do atributo data-correct true, ou seja, se a resposta clicada é correta, ele vai somar +1 em questoes 
+corretas, exatamente pelo fato de voce ter acertado a questão; (1)
+-a linha 35 (if currentIndex < (...)) faz parte tambem da funcao nextQuestion, que vai ser chamada sempre que uma 
+resposta é clicada (obviamente ao clicar em uma resposta, voce espera ir para a proxima pergunta, que todo o processo
+de passar para a outra pergunta, sera elaborada por esta função); (2)
+-É feita uma verificação condicional, onde SE o indice de questão (MOMENTANEA) for menor que do que o numero de questão
+existente (question.length-pergunta.comprimento), ou seja, se há mais perguntas para mostrar ao usuário/se current.index
+ainda nao atingiu o indice da ultima pergunta, o codigo irá carregar a próxima pergunta! Caso contrário, o quiz será 
+finalizado e o resultado será exibido; (2)
+-currentIndex eh uma variavel que mantém o índice da pergunta ATUAL dentro do array `questions`; (2)
