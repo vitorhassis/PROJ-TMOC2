@@ -50,7 +50,7 @@ informações sobre o elemento clicado. continua: (1)
 muito importantes. Por exemplo, estamos fazendo uma verificação condicional, onde, SE o alvo do evento (e.target) tiver
 como valor do atributo data-correct true, ou seja, se a resposta clicada é correta, ele vai somar +1 em questoes 
 corretas, exatamente pelo fato de voce ter acertado a questão; (1)
--a linha 35 (if currentIndex < (...)) faz parte tambem da funcao nextQuestion, que vai ser chamada sempre que uma 
+-a linha 37 (if currentIndex < (...)) faz parte tambem da funcao nextQuestion, que vai ser chamada sempre que uma 
 resposta é clicada (obviamente ao clicar em uma resposta, voce espera ir para a proxima pergunta, que todo o processo
 de passar para a outra pergunta, sera elaborada por esta função); (2)
 -É feita uma verificação condicional, onde SE o indice de questão (MOMENTANEA) for menor que do que o numero de questão
@@ -58,3 +58,93 @@ existente (question.length-pergunta.comprimento), ou seja, se há mais perguntas
 ainda nao atingiu o indice da ultima pergunta, o codigo irá carregar a próxima pergunta! Caso contrário, o quiz será 
 finalizado e o resultado será exibido; (2)
 -currentIndex eh uma variavel que mantém o índice da pergunta ATUAL dentro do array `questions`; (2)
+
+
+function finish() {
+    textFinish.innerHTML = `Você acertou ${questionCorrect} de ${question.length}`;
+    content.style.display = none;
+    contentFinish.style.display = flex;
+}
+-Aqui nesta função, a linha 64 nos diz que o texto de textFinish, vai ser atualizado para "voce acertou...". Lembrando
+que, como vamos concatenar duas strings, utilizamos o chamado Template string ` `;
+-estamos escondendo o elemento content (quiz), ja que irá aparecer apenas o texto indicando o seu numero de acertos em
+relação ao total das questões;
+-e o elemento contentFinish será exibido na tela, apartir do momento em que a função finish for chamada;
+
+
+function loadQuestion() {
+    questionqnt.innerHTML = `${currentIndex + 1}/${question.length}`;
+    const item = questions [currentIndex];
+    answers.innerHTML = "";						(1)
+    question.innerHTML = item.question;
+
+    item.answers.forEach((answer) => {
+        const div = document.createElement("div");    (2)
+
+        div.innerHTML = `
+        <button class="answer" data-correct="${answer.correct}">
+        ${answer.option}
+        </button>
+        `;
+
+        answers.appendChild(div);  (3)
+    });
+
+    document.querySelectorAll(".answer").forEach((item) => {
+        item.addEventListener("click", nextQuestion);
+    })
+}
+-função que mais fiquei perdido, então vou dividir ela;
+-Quando a questao for carregada, o texto de questionqnt será atualizado para o numero de questão atual +1 com base no
+indice de questão total;
+(1)
+-a linha 77, tem como finalidade obter a pergunta e sua resposta, de acordo com o indice atual;		
+-a linha 78, tem como finalidade limpar o conteudo do momento do campo "respostas" para ser atualizado;
+- o question.innerHTML, atualiza o texto do elemento question para o item.question do momento, ou seja, a nova pergunta;
+(2)
+-na segunda parte, percebemos a presença do forEach, que nada mais é, do que uma ação que permite executar uma série de 
+ações sobre cada elemento, sejam elas arrays simples ou de objetos. Então reformulando, esta função vai realizar uma
+série de ações referentes a array answers (os "objetos alternativos" que criamos na pasta question). Quais seriam estas
+funções:				
+-Primeiro, criamos um novo div, e nesta nova div, atualizaremos seu texto. Em resumo, será então adicionado uma div para
+o button, com a classe answer, indicando que cada elemento da array, tem uma opção correta dentro das opções de 
+respostas. Essa lógica do "estar correto ou nao" está dentro da funcao nextQuestion;
+(3)
+- a linha 90, referente ao answers.appendChild(div) tem como finalidade inserir um novo elemento (div) dentro desse
+container. Ou seja, primeiro entendemos que criamos uma div e adicionamos um botão dentro dele com a classe "answer", o
+qual, atraves do data-correct (os atributos data-"x" sao personalizados que permitem armazenar informações adicionais
+em elementos. EX: data-name= armazena informações adicionais de name, por ser um identificador de sua escolha) é 
+possível que o código verifique o valor de data-correct, para determinar se a resposta está correta (answer correct)
+dentro das opções de resposta (answer.option). Então continuando sobre o answer.appendChild(div), após criarmos então
+a div e fazer todo o lance como foi dito a cima, precisamos adicionar ele em um local, correto? Entao ele será adicio-
+nado no container answers(respostas). A Função do Y.appendChild(x) é de adicionar um elemento (x) como filho de um con-
+tainer pai (Y);
+
+
+document.querySelectorAll(".answer").forEach((item) => {
+        item.addEventListener("click", nextQuestion);
+    })
+-primeiramente, selecionamos todos os elementos com a classe "answer" (todas as respostas das alternativas) e, atraves
+do forEach que como vimos acima, realiza uma serie de ações para os elementos de uma array que, no caso, esses elementos
+ficam evidenciados quais são, dentro do parenteses (argumento da forEach), no caso (item). Deixando claro então que:
+`item` é um botão do DOM com a classe answer. (criado na funcao loadQuestion);
+-Então, estamos pegando todos os elementos que possuem a classe .resposta e adicionando uma ação em todos os elementos
+item (botoes das respostas, os itens que voce vai julgar certo ou errado) atraves do forEach. No caso, essa ação, seria
+a adição de um evento ouvinte de click, que irá executar a função "next.Question". Ou seja, ao clicar sobre os itens
+das respostas (qualquer uma, seja ela a correta ou nao), executará a função de proxima questão!;
+-------------------------------------
+QUESTION.JS
+-aq foi onde criamos basicamente as perguntas, e as respostas;
+-para isso, segue essa estrutura que nao tinha visto nada parecido ainda, mas é bem facil:
+
+{
+    question: "x",
+    answers: [
+        { option: "y", correct: false/true},
+    ],
+ },
+ -basicamente segue essa estrutura (exatamente assim, com as chaves, virgulas) onde em question nós escrevemos o que
+ será o texto apresentado como pergunta ao usuario, e em answers são as opções de respostas que aparacerão. No caso,
+ dentre as opções, uma delas logicamente deverá ser a correta. A que for correta, voce coloca correct:true. As demais,
+ voce completa com false!;
+ 
