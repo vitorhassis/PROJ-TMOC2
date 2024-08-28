@@ -93,6 +93,10 @@ a {
     margin-bottom: 8em;
 }
 
+.div__box:hover {
+    background: rgba(209, 209, 207, 0.192);
+}
+
 footer {
     padding: 0.25rem;
     background: rgb(18, 21, 141);

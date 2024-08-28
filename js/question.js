@@ -16,11 +16,11 @@ export default [
         ], 
     },
     {
-        question: "Qual o nome do vilão do bairro que sempre tenta fazer mal a Chris e seus amigos?",
+        question: "No episódio Todo mundo odeia DJs, é revelado um segredo constrangedor sobre Julius. Qual era esse segredo?",
         answers: [
-            { option: "Tony", correct: false},
-            { option: "Caruso", correct: true},
-            { option: "Vinnie", correct: false},
+            { option: "Ele era alcoólatra", correct: false},
+            { option: "Ele tinha medo de ratos", correct: false},
+            { option: "Ele tinha medo de coelhos", correct: true},
         ],  
     },
     {
@@ -52,7 +52,7 @@ export default [
         answers: [
             { option: "Puro Voodo", correct: true},
             { option: "Pure Essense", correct: false},
-            { option: "Luxe Drea,", correct: false},
+            { option: "Luxe Dream", correct: false},
         ],
     },
     {

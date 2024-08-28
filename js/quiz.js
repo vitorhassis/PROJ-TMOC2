@@ -14,6 +14,10 @@ let questionsCorrect = 0;
 btnRestart.onclick = () => {
     content.style.display = "flex";
     contentFinish.style.display = "none";
+
+    currentIndex = 0;
+    questionsCorrect = 0;
+    loadQuestion();
 }
 
 function nextQuestion(e) {
@@ -30,13 +34,13 @@ function nextQuestion(e) {
 }
 
 function finish() {
-    textFinish.innerHTML = `Você acertou ${questionCorrect} de ${question.length}`;
+    textFinish.innerHTML = `Você acertou ${questionsCorrect} de ${questions.length}`;
     content.style.display = "none";
     contentFinish.style.display = "flex";
 }
 
 function loadQuestion() {
-    questionqnt.innerHTML = `${currentIndex + 1}/${question.length}`;
+    questionqnt.innerHTML = `${currentIndex + 1}/${questions.length}`;
     const item = questions [currentIndex]; //obter a pergunta e sua resposta de acordo com o indice atual
     answers.innerHTML = "";
     question.innerHTML = item.question;
