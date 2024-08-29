@@ -176,7 +176,37 @@ footer > p > a:hover {
     color: yellow;
 }
 
+@media (max-width: 1300px){
+    main {
+        width: 85vw;
+}
+}
 
+@media (max-width: 900px){ 
+    main {
+        padding: 2em;
+    }
 
+    header {
+        justify-content: center;
+    }
 
+    #icon {
+        width: 60px;
+    }
+}
 
+@media (max-width: 860px){
+   .titulo {
+    font-size: 25px;
+    margin: auto;
+   } 
+}
+
+@media (max-width: 860px){
+    .titulo {
+        text-align: center;
+        font-size: 26px;
+        margin: auto;
+    }
+}
