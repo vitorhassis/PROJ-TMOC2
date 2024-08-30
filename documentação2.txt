@@ -1,0 +1,46 @@
+DICAS
+-display flex: header se torna um flex container, conseguindo manipular todos os elementos filhos dele, no caso, so a 
+img;
+-align-items center: centraliza verticalmente os itens filhos dentro do container, nesse caso do container header;
+-justify-content center: centraliza horizontalmente os itens filhos dentro do container;
+-aprendemos a fazer aquela linha verde, embaixo do header, ta la no html e css;
+-------------------------------
+HTML
+-
+
+
+
+-------------------------------
+CSS
+-basicamente, criamos uma div chamada div__boxs, em que dentro dela vai ter as duas divs;
+-ambas div__boxs e div__box precisam de display flex.O justify-content space-between, usado no div__box, distribui os 
+itens
+uniformemente, colocando o primeiro item no inicio da linha, e o ultimo no final, com um ESPAÇO IGUAL entre os demais 
+itens;
+-Flex-direction column: define a direção dos itens flexiveis em um conteiner flexivel (container com display flex) de 
+forma que os itens filhos sejam organizados em uma unica coluna, um embaixo do outro, da parte superior para a inf;
+-flex-direction row: define a direção dos itens filhos para serem organizados em UMA LINHA, seguindo a mesma 
+direção da leitura do texto, ou seja, horizontalmente da esq pra direita;
+-justify-content space-around: distribui o espaço livre ao redor dos itens flexiveis em um container. Os itens filhos
+terao espaço igual ao redor deles, com a mesma quantidade de espaço antes do primeiro item e depois do ultimo item;
+-margin auto: centraliza um elemento de bloco horizontalmente dentro de seu container;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------
