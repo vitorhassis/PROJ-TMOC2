@@ -50,7 +50,7 @@ export default [
     {
         question: "Qual o nome do perfume caro que Rochelle deseja tanto comprar na série?",
         answers: [
-            { option: "Puro Voodo", correct: true},
+            { option: "Puro Voodoo", correct: true},
             { option: "Pure Essense", correct: false},
             { option: "Luxe Dream", correct: false},
         ],
