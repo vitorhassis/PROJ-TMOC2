@@ -147,4 +147,31 @@ QUESTION.JS
  será o texto apresentado como pergunta ao usuario, e em answers são as opções de respostas que aparacerão. No caso,
  dentre as opções, uma delas logicamente deverá ser a correta. A que for correta, voce coloca correct:true. As demais,
  voce completa com false!;
- 
+----------------------------------
+DICAS
+-display flex: header se torna um flex container, conseguindo manipular todos os elementos filhos dele, no caso, so a 
+img;
+-align-items center: centraliza verticalmente os itens filhos dentro do container, nesse caso do container header;
+-justify-content center: centraliza horizontalmente os itens filhos dentro do container;
+-aprendemos a fazer aquela linha verde, embaixo do header, ta la no html e css;
+-------------------------------
+HTML
+-nada de novo
+-------------------------------
+CSS
+-basicamente, criamos uma div chamada div__boxs, em que dentro dela vai ter as duas divs;
+-ambas div__boxs e div__box precisam de display flex.O justify-content space-between, usado no div__box, distribui os 
+itens
+uniformemente, colocando o primeiro item no inicio da linha, e o ultimo no final, com um ESPAÇO IGUAL entre os demais 
+itens;
+-Flex-direction column: define a direção dos itens flexiveis em um conteiner flexivel (container com display flex) de 
+forma que os itens filhos sejam organizados em uma unica coluna, um embaixo do outro, da parte superior para a inf;
+-flex-direction row: define a direção dos itens filhos para serem organizados em UMA LINHA, seguindo a mesma 
+direção da leitura do texto, ou seja, horizontalmente da esq pra direita;
+-flex direction column: faz com que o body se comporte como um container flexivel vertical;
+-justify-content space-around: distribui o espaço livre ao redor dos itens flexiveis em um container. Os itens filhos
+terao espaço igual ao redor deles, com a mesma quantidade de espaço antes do primeiro item e depois do ultimo item;
+-margin auto: centraliza um elemento de bloco horizontalmente dentro de seu container;
+-flex 1: fac com que o div__boxs ocupe o espaço restante disponível entre o header e o footer;
+-box-sizing: border-box = garante que o padding e a borda nao aumentem o tamanho total dos elementos; 
+-justify-content flex-end: alinha os itens de um container flexivel na extremidade oposta do eixo principal;
