@@ -139,6 +139,10 @@ footer > p > a:hover {
 
 @media (max-width: 870px) {
 
+    header {
+        height: 20vh;
+    }
+
     .div__boxs {
         flex-direction: column;
     }
@@ -161,6 +165,10 @@ footer > p > a:hover {
         width: 100%;
         height: 0.5vh;
         background-color: rgba(159, 245, 0, 0.925) ;
+    }
+
+    h2 {
+        -webkit-text-stroke: 1.5px rgba(0, 51, 255, 0.673); 
     }
 }
 
