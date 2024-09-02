@@ -24,7 +24,7 @@ export default [
         ],  
     },
     {
-        question: "Qual a comida favorita de Julius:",
+        question: "Qual a comida favorita de Julius?",
         answers: [
             { option: "Pizza", correct: false},
             { option: "Hamburguer", correct: false},
