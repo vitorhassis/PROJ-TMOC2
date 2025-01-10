@@ -2,7 +2,7 @@
 
 ###
 
-<p align="center">Segundo projeto com o tema da série "Todo Mundo Odeia O Chris", com a presença de um "Quiz" sobre os personagens. Caso clique em "Conheça melhor os personagens", você será redirecionado para uns dos meus primeiros projetos, onde desenvolvi uma Landing Page com informações sobre cada personagem.</p>
+<p align="center">-Segundo projeto com o tema da série "Todo Mundo Odeia O Chris", com a presença de um "Quiz" sobre os personagens. Caso clique em "Conheça melhor os personagens", você será redirecionado para uns dos meus primeiros projetos, onde desenvolvi uma Landing Page com informações sobre cada personagem;</p>
 
 ###
 
@@ -12,7 +12,7 @@
 
 ###
 
-<p align="center">O objetivo do projeto foi aprender sobre toda a lógica por de trás de um simples Quiz</p>
+<p align="center">-O objetivo do projeto foi aprender sobre toda a lógica por de trás de um simples Quiz;</p>
 
 ###
 
@@ -22,7 +22,7 @@
 
 ###
 
-<p align="center">Com um total de 10 perguntas de níveis variados de dificuldades, você terá no final um resultado relativo aos números de acertos.</p>
+<p align="center">-Com um total de 10 perguntas de níveis variados de dificuldades, você terá no final um resultado relativo aos números de acertos;</p>
 
 ###
 
